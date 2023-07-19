@@ -5,7 +5,7 @@ const LogoImg = () => {
   return (
     <Image
       src="/assets/logo.png"
-      className=" ml-5"
+      className=" ml-20"
       alt="MMA Devs logo"
       width={160}
       height={30}
