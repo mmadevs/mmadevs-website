@@ -1,4 +1,7 @@
 import { NavBar } from "./organisms/NavBar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
 import Welcome from "./pages/Welcome";
 
@@ -8,7 +11,9 @@ export default function App() {
       <div className="h-screen w-screen">
         <NavBar />
         <Welcome />
-        <h1>Teste</h1>
+        <About />
+        <Projects />
+        <Contact />
       </div>
     </>
   );

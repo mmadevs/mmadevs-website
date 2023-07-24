@@ -1,60 +1,33 @@
-import Image from "next/image";
-import Link from "next/link";
-
-const LogoImg = () => {
-  return (
-    <Image
-      src="/assets/logo.png"
-      className=" ml-20"
-      alt="MMA Devs logo"
-      width={160}
-      height={30}
-    />
-  );
-};
-
-const Menu = () => {
-  return (
-    <div className="flex justify-center  text-white mr-10 text-sm">
-      {/* text-sky-600 */}
-      {/* transition duration-300 border-b-8 border-transparent hover:border-sky-500 */}
-      <Link
-        href={"/"}
-        className="p-3 ml-2 mr-2 hover:text-sky-600 active:font-bold"
-      >
-        HOME
-      </Link>
-      <Link
-        href={"#"}
-        className="p-3 ml-2 mr-2  hover:text-sky-600 active:font-bold"
-      >
-        SOBRE
-      </Link>
-      <Link
-        href={"#"}
-        className="p-3 ml-2 mr-2  hover:text-sky-600 active:font-bold"
-      >
-        PORTFÓLIO
-      </Link>
-      <Link
-        href={"#"}
-        className="p-3 ml-2 mr-2  hover:text-sky-600 active:font-bold"
-      >
-        CONTATO
-      </Link>
-    </div>
-  );
-};
+"use client";
+import React, { useEffect, useState } from "react";
+import { LogoImg } from "../atoms/Logo";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export const NavBar = () => {
+  const menuList = [
+    { name: "HOME", href: "/" },
+    { name: "SOBRE", href: "#" },
+    { name: "PORFÓLIO", href: "#" },
+    { name: "CONTATO", href: "#" },
+  ];
+
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-dark-blue">
-        <div className="flex items-center justify-between h-16">
+      <nav className="fixed top-0 z-50 bg-dark-blue">
+        <div className="flex items-center justify-between h-16 text-white">
           <LogoImg />
-          <Menu />
+          <button className=" text-[2rem] p-4 bg-blue-950">
+            <GiHamburgerMenu />
+          </button>
+          {/* <ul className='list'>
+            {menuList.map((menuList) => (
+              <li key={""}>
+                <a href={menuList.href}>{menuList.name}</a>{" "}
+              </li>
+            ))}
+          </ul> */}
         </div>
-        <hr className="w-screen h-px my-0 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <hr className="w-screen h-px my-0 bg-gray-200 border-0 dark:bg-gray-700 "></hr>
       </nav>
     </>
   );
