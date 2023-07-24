@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Scrollbar, EffectFade } from "swiper/modules";
+import { Autoplay, Scrollbar, EffectFade, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/bundle";
@@ -18,10 +18,12 @@ const Welcome = () => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
               autoplay={{ delay: 2000 }}
-              scrollbar={{ draggable: true }}
+              // scrollbar={{ draggable: true }}
+              pagination={{ clickable: true }}
               speed={2000}
               effect="fade"
-              modules={[Autoplay, Scrollbar, EffectFade]}
+              modules={[Autoplay, EffectFade, Pagination]}
+              className="mt-4"
             >
               <SwiperSlide>
                 <Image
@@ -59,12 +61,13 @@ const Welcome = () => {
                   className="rounded-lg"
                 />
               </SwiperSlide>
+              <br />
               ...
             </Swiper>
-            <p className="text-4xl font-bold text-sky-400 mt-4">
+            <p className="text-4xl text-justify font-bold text-sky-400 p-4 pb-0">
               A solução para o seu negócio.
             </p>
-            <p className="mt-2">
+            <p className="p-4 text-justify">
               Entregamos o que você precisa, de forma ágil, eficaz e com valor
               justo, que cabe no seu bolso. Faça hoje mesmo um orçamento
               conosco!

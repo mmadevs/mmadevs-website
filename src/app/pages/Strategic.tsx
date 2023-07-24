@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const Strategic = () => {
   return (
-    <div className="w-screen text-dark-blue bg-blue-50">
+    <div className="w-screen text-dark-blue p-10">
       <div className="flex items-center p-4 flex-wrap">
         <TbTargetArrow className="text-2xl" />
         <p className="ml-4 text-2xl font-bold">MISSÃO</p>
@@ -31,8 +31,8 @@ export const Strategic = () => {
           ética, o respeito, e estar sempre aberto a grandes desafios.
         </p>
       </div>
-      <div className="block text-center">
-        <p className="font-bold">Fundadores</p>
+      <div className="block text-center mt-6">
+        <p className="text-lg  font-bold">FUNDADORES</p>
         <div
           className="w-38 flex flex-wrap items-center justify-center bg-blue-900 m-4  rounded-md text-white"
           id="av"

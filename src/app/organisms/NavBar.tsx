@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { LogoImg } from "../atoms/Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
 

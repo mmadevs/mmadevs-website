@@ -1,9 +1,10 @@
-import Image from "next/image";
-
 export const Contact = () => {
   return (
-    <div className="w-screen text-black pt-4 p-6 bg-blue-300">
-      <p className="text-left text-lg font-bold">FALE CONOSCO</p>
+    <div className="w-screen text-black p-10 bg-blue-50 border-t-2 border-b-2 border-gray-200">
+      <p className="text-2xl font-bold flex items-center text-justify">
+        {/* <FcInfo className="mr-3 text-4xl" /> */}
+        FALE CONOSCO
+      </p>
       <p className="text-justify mt-4">
         Somos a solução que você precisa e estamos a disposição para colaborar
         com a sua empresa, colocamos o seu projeto em prática de forma
@@ -15,7 +16,7 @@ export const Contact = () => {
           Seu nome
         </label>
         <input
-          className="rounded-md h-7 mt-2"
+          className="rounded-md p-1.5 mt-2"
           type="text"
           id="name"
           maxLength={40}
@@ -26,7 +27,7 @@ export const Contact = () => {
           Empresa
         </label>
         <input
-          className="rounded-md h-7 mt-2"
+          className="rounded-md p-1.5 mt-2"
           type="text"
           id="businessname"
           maxLength={40}
@@ -37,7 +38,7 @@ export const Contact = () => {
           E-mail
         </label>
         <input
-          className="rounded-md h-7 mt-2"
+          className="rounded-md p-1.5 mt-2"
           type="mail"
           id="mail"
           maxLength={40}
@@ -48,7 +49,7 @@ export const Contact = () => {
           Seu contato
         </label>
         <input
-          className="rounded-md h-7 mt-2"
+          className="rounded-md p-1.5 mt-2"
           type="text"
           id="phone"
           maxLength={14}
