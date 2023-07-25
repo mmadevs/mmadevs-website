@@ -12,7 +12,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 bg-dark-blue">
+      <nav className="w-screen fixed top-0 z-50 bg-dark-blue">
         <div className="flex items-center justify-between h-16 text-white">
           <LogoImg />
           <button className=" text-[2rem] p-4 bg-blue-950">
