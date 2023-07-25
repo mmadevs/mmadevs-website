@@ -10,8 +10,8 @@ const Welcome = () => {
   return (
     <>
       <div className="bg-[url('/assets/img/bg.jpg')] bg-cover z-0 w-screen h-screen">
-        <div className="w-screen h-screen text-white bg-dark-blue/90 z-10 pt-20 md: lg:">
-          <div className="box-border flex flex-wrap justify-center items-center p-6 md: lg:">
+        <div className="w-screen h-screen text-white text-center bg-dark-blue/90 z-10 pt-20 md: lg:">
+          <div className="box-border flex flex-wrap justify-center items-center pt-5 pl-8 pr-8 md: lg:">
             <Swiper
               spaceBetween={50}
               slidesPerView={1}
@@ -22,67 +22,76 @@ const Welcome = () => {
               speed={2000}
               effect="fade"
               modules={[Autoplay, EffectFade, Pagination]}
-              className="mt-4"
-              centeredSlides={true}
-              centeredSlidesBounds={true}
+              className=""
               breakpoints={{
                 1024: {
                   spaceBetween: 50,
                   slidesPerView: 1,
                 },
               }}
+              centeredSlides={true}
             >
               <SwiperSlide>
-                <Image
-                  src="/assets/img/image-1.png"
-                  alt=""
-                  width={500}
-                  height={0}
-                  className="rounded-lg md:ml-28 lg:w-[40rem]"
-                />
+                <div className="flex justify-center items-center">
+                  <Image
+                    src="/assets/img/image-1.png"
+                    alt=""
+                    width={500}
+                    height={0}
+                    className="rounded-lg"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <Image
-                  src="/assets/img/image-2.jpg"
-                  alt=""
-                  width={500}
-                  height={0}
-                  className="rounded-lg md:ml-28 lg:w-[40rem]"
-                />
+                <div className="flex justify-center items-center">
+                  <Image
+                    src="/assets/img/image-1.png"
+                    alt=""
+                    width={500}
+                    height={0}
+                    className="rounded-lg"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <Image
-                  src="/assets/img/image3.jpg"
-                  alt=""
-                  width={500}
-                  height={0}
-                  className="rounded-lg md:ml-28 lg:w-[40rem]"
-                />
+                <div className="flex justify-center items-center">
+                  <Image
+                    src="/assets/img/image-1.png"
+                    alt=""
+                    width={500}
+                    height={0}
+                    className="rounded-lg"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <Image
-                  src="/assets/img/image-4.jpg"
-                  alt=""
-                  width={500}
-                  height={0}
-                  className="rounded-lg md:ml-28 lg:w-[40rem]"
-                />
+                <div className="flex justify-center items-center">
+                  <Image
+                    src="/assets/img/image-1.png"
+                    alt=""
+                    width={500}
+                    height={0}
+                    className="rounded-lg"
+                  />
+                </div>
               </SwiperSlide>
               <br />
               <p className="text-transparent">...</p>
             </Swiper>
-            <p className="text-4xl text-justify font-bold text-sky-400 p-4 pb-0 md:text-center lg:text-5xl">
-              A solução para o seu negócio.
-            </p>
-            <p className="p-4 text-justify md:text-center">
-              Entregamos o que você precisa, de forma ágil, eficaz e com valor
-              justo, que cabe no seu bolso. Faça hoje mesmo um orçamento
-              conosco!
-            </p>
-            <button className="rounded-lg mt-8 p-3 text-white bg-blue-800 hover:bg-blue-600">
-              Solicitar orçamento
-            </button>
           </div>
+          <p className="text-4xl text-center font-bold text-sky-400 pb-0 pt-0 md:text-center lg:text-5xl">
+            A solução para o seu negócio.
+          </p>
+          <p className="p-4 text-center md:text-center mb-6">
+            Entregamos o que você precisa, de forma ágil, eficaz e com valor
+            justo, que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
+          </p>
+          <a
+            className="rounded-lg p-4 text-white bg-blue-800 hover:bg-blue-600"
+            href="#"
+          >
+            Solicitar orçamento
+          </a>
         </div>
       </div>
     </>

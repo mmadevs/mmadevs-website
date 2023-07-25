@@ -67,7 +67,7 @@ export const Contact = () => {
       </p>
 
       <form
-        className="grid mt-6 md:p-12 pt-0 m-0"
+        className="grid mt-6 ml-0 mr-0 md:ml-14 mr-14 p-0 lg:p-0 ml-28 mr-28"
         id="contactus"
         onSubmit={sendEmail}
       >

@@ -12,7 +12,7 @@ export const Projects = () => {
         nossos clientes nos confiaram a responsabilidade em atender as suas
         demandas.
       </p>
-      <div className="flex flex-wrap justify-center items-center flex-row-4 gap-20 md:p-6 m-14 lg:grid justify-items-center">
+      <div className="flex flex-wrap justify-center items-center flex-row-4 gap-[3rem] md:p-6 m-16 gap-14 gap-24 lg:flex justify-items-center gap-4">
         <a href="https://www.digitaxi.coop.br" target="blank">
           <Image
             src="/assets/img/digitaxi.png"

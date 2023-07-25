@@ -48,7 +48,7 @@ const About = () => {
           devidamente capacitados e com sólida experiência na área de Tecnologia
           da Informação e em Desenvolvimento de Software.
         </p>
-        <div className="box-border flex flex-wrap justify-center text-white mt-4 lg:m-12">
+        <div className="box-border flex flex-wrap justify-center text-white mt-4 lg:">
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -106,33 +106,39 @@ const About = () => {
             ...
           </Swiper>
         </div>
-        <div className="flex items-center pt-5 flex-wrap lg:m-12">
-          <TbTargetArrow className="text-2xl" />
-          <p className="ml-4 text-2xl font-bold">MISSÃO</p>
+        <div className="block pt-12 lg: p-8">
+          <div className="flex justify-left items-center">
+            <TbTargetArrow className="text-2xl" />
+            <p className="ml-4 text-2xl font-bold">MISSÃO</p>
+          </div>
           <p className="mt-2 text-justify">
             Nosso propósito consiste em trazer soluções sustentáveis e
             econômicas aos nossos clientes no ramo de tecnologia da informação.
           </p>
         </div>
-        <div className="flex items-center pt-5 flex-wrap lg:m-12">
-          <AiFillEye className="text-2xl" />
-          <p className="ml-4 text-2xl font-bold">VISÃO</p>
+        <div className="block pt-2 lg: p-8">
+          <div className="flex justify-left items-center">
+            <AiFillEye className="text-2xl" />
+            <p className="ml-4 text-2xl font-bold">VISÃO</p>
+          </div>
           <p className="mt-2 text-justify">
             Nosso propósito consiste em trazer soluções sustentáveis e
             econômicas aos nossos clientes no ramo de tecnologia da informação.
           </p>
         </div>
-        <div className="flex items-center pt-5 flex-wrap lg:m-12">
-          <FaBalanceScale className="text-2xl" />
-          <p className="ml-4 text-2xl font-bold">VALORES</p>
+        <div className="block pt-2 lg: p-8">
+          <div className="flex justify-left items-center">
+            <FaBalanceScale className="text-2xl" />
+            <p className="ml-4 text-2xl font-bold">VALORES</p>
+          </div>
           <p className="mt-2 text-justify">
             Nossos principais pilares de valores são a responsabilidade para com
             os nossos clientes, com a sociedade, agir sempre com transparência e
             ética, o respeito, e estar sempre aberto a grandes desafios.
           </p>
         </div>
-        <p className="text-lg font-bold p-6 mt-4 text-center">FUNDADORES</p>
-        <div className="block text-center justify-center pt-8 md:flex lg:">
+        <p className="text-lg font-bold mt-2 text-center">FUNDADORES</p>
+        <div className="block text-center justify-center pt-2 md:flex lg:">
           <div
             className="flex flex-wrap items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
             id="av"
