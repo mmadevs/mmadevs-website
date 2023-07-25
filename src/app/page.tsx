@@ -1,5 +1,6 @@
 import Footer from "./organisms/Footer";
 import { NavBar } from "./organisms/NavBar";
+import { NavBarTest } from "./organisms/NavBar copy";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
@@ -9,7 +10,7 @@ export default function App() {
   return (
     <>
       <div className="h-screen w-screen">
-        <NavBar />
+        <NavBarTest />
         <Welcome />
         <About />
         <Projects />
