@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { LogoImg } from "../atoms/Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
 
 export const NavBarTest = () => {
   const menuList = [
@@ -13,37 +14,40 @@ export const NavBarTest = () => {
 
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
+  const [changeBtn, setChangeBtn] = useState(false);
+
   return (
     <>
-      <nav className="w-screen fixed top-0 z-50 bg-dark-blue">
-        <div className="inline-flex items-center justify-between h-16 text-white">
-          <a href="/" className="">
-            <LogoImg />
-          </a>
-
+      <nav className="w-screen fixed z-50 bg-dark-blue">
+        <div className="text-white w-screen h-16">
+          <div className="relative top-4 h-0 ml-5 float-left">
+            <a href="/">
+              <LogoImg />
+            </a>
+          </div>
           <button
-            className="justify-center text-[2rem] p-4 bg-blue-950 float-right"
+            className="text-white justify-center text-[2rem] p-4 bg-blue-950 float-right mr-4 lg:hidden"
             onClick={() => {
               setIsNavExpanded(!isNavExpanded);
             }}
           >
-            <GiHamburgerMenu className="text-white" />
+            <GiHamburgerMenu />
           </button>
-          <div className={isNavExpanded ? "menu-full expanded" : "hidden"}>
-            <ul className="p-12 absolute top-20 right-2 inline-grid  h-96 bg-blue-50 text-black">
-              <a href="" className="p-3 hover:text-blue-500">
+          <div className={isNavExpanded ? "test" : "hidden lg:grid"}>
+            <ul className="p-3 absolute right-5 grid bg-blue-400 top-[4.5rem] text-black lg:block top-2 m-0 aboluste bg-transparent text-white">
+              <a href="" className="p-4 hover:text-blue-500">
                 HOME
               </a>
 
-              <a href="" className="p-3 hover:text-blue-500">
+              <a href="" className="p-4 hover:text-blue-500">
                 SOBRE
               </a>
 
-              <a href="" className="p-3 hover:text-blue-500">
+              <a href="" className="p-4 hover:text-blue-500">
                 PORFÓLIO
               </a>
 
-              <a href="" className="p-3 hover:text-blue-500">
+              <a href="" className="p-4 hover:text-blue-500">
                 CONTATO
               </a>
             </ul>
