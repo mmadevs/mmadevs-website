@@ -32,7 +32,7 @@ export const NavBar = () => {
           <ul className="text-center text-dark-blue w-2/4 lg:w-fit p-6 mt-6 right-0 z-50 rounded-xl bg-blue-50 lg:text-white lg:bg-transparent lg:mt-0 lg:pt-1.5 lg:flex  ">
             <li className="p-3 lg:pt-0">
               <a
-                href="/"
+                href="#home"
                 className="hover:bg-blue-100 p-2 rounded-md lg:hover:bg-transparent hover:text-blue-500"
               >
                 HOME
@@ -40,7 +40,7 @@ export const NavBar = () => {
             </li>
             <li className="p-3 lg:pt-0">
               <a
-                href="/"
+                href="#about"
                 className="hover:bg-blue-100 p-2 rounded-md lg:hover:bg-transparent hover:text-blue-500"
               >
                 SOBRE
@@ -48,7 +48,7 @@ export const NavBar = () => {
             </li>
             <li className="p-3 lg:pt-0">
               <a
-                href="/"
+                href="#portfolio"
                 className="hover:bg-blue-100 p-2 rounded-md lg:hover:bg-transparent hover:text-blue-500"
               >
                 PORTFÓLIO
@@ -56,7 +56,7 @@ export const NavBar = () => {
             </li>
             <li className="p-3 lg:pt-0">
               <a
-                href="/"
+                href="#contact-us"
                 className="hover:bg-blue-100 p-2 rounded-md lg:hover:bg-transparent hover:text-blue-500"
               >
                 CONTATO
