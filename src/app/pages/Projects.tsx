@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Projects = () => {
   return (
-    <div className="w-screen h-screen text-black p-10">
-      <p className="text-2xl font-bold flex items-center text-justify lg:m-12">
+    <div className="w-screen h-screen md:h-fit text-black p-16">
+      <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
         {/* <FcInfo className="mr-3 text-4xl" /> */}
         PROJETOS REALIZADOS
       </p>
@@ -12,8 +12,12 @@ export const Projects = () => {
         nossos clientes nos confiaram a responsabilidade em atender as suas
         demandas.
       </p>
-      <div className="flex flex-wrap justify-center items-center flex-row-4 gap-[3rem] md:p-6 m-16 gap-14 gap-24 lg:flex justify-items-center gap-4">
-        <a href="https://www.digitaxi.coop.br" target="blank">
+      <div className="flex flex-wrap justify-center items-center gap-16 lg:grid lg:grid-cols-4 lg:justify-items-center">
+        <a
+          href="https://www.digitaxi.coop.br"
+          target="blank"
+          className="lg:p-4"
+        >
           <Image
             src="/assets/img/digitaxi.png"
             width={150}
@@ -22,7 +26,11 @@ export const Projects = () => {
             className=""
           ></Image>
         </a>
-        <a href="https://www.bapetransportes.com" target="blank">
+        <a
+          href="https://www.bapetransportes.com"
+          target="blank"
+          className="lg:p-4"
+        >
           <Image
             src="/assets/img/bape.png"
             width={100}
@@ -31,7 +39,7 @@ export const Projects = () => {
             className=""
           ></Image>
         </a>
-        <a href="http://www.cootranspex.com.br" target="blank">
+        <a href="https://cootranspex.com.br" target="blank" className="lg:p-4">
           <Image
             src="/assets/img/cootranspex.png"
             width={150}
@@ -40,7 +48,7 @@ export const Projects = () => {
             className=""
           ></Image>
         </a>
-        <a href="http://gstcontabil.com.br" target="blank">
+        <a href="http://gstcontabil.com.br" target="blank" className="lg:p-4">
           <Image
             src="/assets/img/gestao.png"
             width={100}

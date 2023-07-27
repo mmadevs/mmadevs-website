@@ -9,7 +9,7 @@ export const Contact = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  function sendEmail(e) {
+  function sendEmail(e: any) {
     e.preventDefault();
 
     if (
@@ -55,8 +55,8 @@ export const Contact = () => {
   }
 
   return (
-    <div className="w-screen text-black p-10 bg-blue-50 border-t-2 border-b-2 border-gray-200 ">
-      <p className="text-2xl font-bold flex items-center text-justify lg:m-12">
+    <div className="w-screen text-black p-16 bg-blue-50 border-t-2 border-b-2 border-gray-200 ">
+      <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
         {/* <FcInfo className="mr-3 text-4xl" /> */}
         FALE CONOSCO
       </p>
@@ -67,7 +67,7 @@ export const Contact = () => {
       </p>
 
       <form
-        className="grid mt-6 ml-0 mr-0 md:ml-14 mr-14 p-0 lg:p-0 ml-28 mr-28"
+        className="grid mt-6 pt-2 pb-0 lg:p-36 lg:pt-0 lg:pb-0"
         id="contactus"
         onSubmit={sendEmail}
       >

@@ -10,35 +10,14 @@ import { Autoplay, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
 
-const servicesList = [
-  {
-    id: 1,
-    name: "WEBSITES",
-    content:
-      "Páginas da web para seu comércio, marca ou projeto. Visual de qualidade e super responsivo. (Boa visualização em desktops e celulares)",
-  },
-  {
-    id: 2,
-    name: "WEBAPPS",
-    content:
-      "Aplicações em navegadores, sem necessidade de instalação. Versáteis, podem ser acessadas de qualquer dispositivo com acesso à internet. ",
-  },
-  {
-    id: 3,
-    name: "MOBILE APPS",
-    content:
-      "Aplicativos para celulares e tablets. Não necessitam de internet para ser acessados, exceto funções onde é obrigatória a conexão.",
-  },
-];
-
 const About = () => {
   return (
     <>
       <div
-        className="w-screen max-w-full text-dark-blue p-10 border-t-2 border-b-2 border-gray-200"
+        className="w-screen max-w-full text-dark-blue p-16 pb-8 border-t-2 border-b-2 border-gray-200"
         id="about"
       >
-        <p className="text-2xl font-bold flex items-center text-justify lg:m-12">
+        <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
           QUEM SOMOS?
         </p>
         <p className="mt-5 text-justify lg:m-12">
@@ -48,7 +27,7 @@ const About = () => {
           devidamente capacitados e com sólida experiência na área de Tecnologia
           da Informação e em Desenvolvimento de Software.
         </p>
-        <div className="box-border flex flex-wrap justify-center text-white mt-4 lg:">
+        <div className="box-border flex flex-wrap justify-center text-white mt-4">
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -66,7 +45,7 @@ const About = () => {
             }}
           >
             <SwiperSlide>
-              <div className="bg-blue-900 rounded-lg m-4 md:w-[12.5rem] h-[20rem] p-0 lg:w-[16rem] h-[18rem] ">
+              <div className="bg-blue-900 rounded-lg m-4 md:h-[20rem] p-0 lg:w-[16rem] lg:h-[18rem] md:w-58">
                 <p className="font-bold text-center pt-6">WEBSITES</p>
                 <ul className="list-disc text-left p-7">
                   <li>
@@ -80,7 +59,7 @@ const About = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-blue-900 rounded-lg  m-5 md:w-[12.5rem] h-[20rem] p-0 lg:w-[16rem] h-[18rem]">
+              <div className="bg-blue-900 rounded-lg m-4 md:h-[20rem] p-0 lg:w-[16rem] lg:h-[18rem] md:w-58">
                 <p className="font-bold text-center pt-6">WEB APPS</p>
                 <ul className="list-disc text-left p-7">
                   <li>Páginas da web para seu comércio, marca ou projeto.</li>
@@ -92,7 +71,7 @@ const About = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-blue-900  rounded-lg  m-5 md:w-[12.5rem] h-[20rem] p-0 lg:w-[16rem] h-[18rem]">
+              <div className="bg-blue-900 rounded-lg m-4 md:h-[20rem] p-0 lg:w-[16rem] lg:h-[18rem] md:w-60">
                 <p className="font-bold text-center pt-6">MOBILE APPS</p>
                 <ul className="list-disc text-left p-7">
                   <li>Aplicações web, sem necessidade de instalação.</li>
@@ -106,41 +85,48 @@ const About = () => {
             ...
           </Swiper>
         </div>
-        <div className="block pt-12 lg: p-8">
-          <div className="flex justify-left items-center">
-            <TbTargetArrow className="text-2xl" />
-            <p className="ml-4 text-2xl font-bold">MISSÃO</p>
+
+        <div className="mt-12" id="strategic">
+          <div className="" id="strategic-mission">
+            <p className="text-2xl font-bold flex items-center">
+              <TbTargetArrow className="mr-4 text-2xl" />
+              MISSÃO
+            </p>
+            <p className="mt-2 text-justify">
+              Nosso propósito consiste em trazer soluções sustentáveis e
+              econômicas aos nossos clientes no ramo de tecnologia da
+              informação.
+            </p>
           </div>
-          <p className="mt-2 text-justify">
-            Nosso propósito consiste em trazer soluções sustentáveis e
-            econômicas aos nossos clientes no ramo de tecnologia da informação.
-          </p>
-        </div>
-        <div className="block pt-2 lg: p-8">
-          <div className="flex justify-left items-center">
-            <AiFillEye className="text-2xl" />
-            <p className="ml-4 text-2xl font-bold">VISÃO</p>
+          <div className="mt-8" id="strategic-vision">
+            <p className="text-2xl font-bold flex items-center">
+              <AiFillEye className="mr-4 text-2xl" />
+              VISÃO
+            </p>
+            <p className="mt-2 text-justify">
+              Nosso propósito consiste em trazer soluções sustentáveis e
+              econômicas aos nossos clientes no ramo de tecnologia da
+              informação.
+            </p>
           </div>
-          <p className="mt-2 text-justify">
-            Nosso propósito consiste em trazer soluções sustentáveis e
-            econômicas aos nossos clientes no ramo de tecnologia da informação.
-          </p>
-        </div>
-        <div className="block pt-2 lg: p-8">
-          <div className="flex justify-left items-center">
-            <FaBalanceScale className="text-2xl" />
-            <p className="ml-4 text-2xl font-bold">VALORES</p>
+          <div className="mt-8" id="strategic-values">
+            <p className="text-2xl font-bold flex items-center">
+              <FaBalanceScale className="mr-4 text-2xl" />
+              VALORES
+            </p>
+            <p className="mt-2 text-justify">
+              Nossos principais pilares de valores são a responsabilidade para
+              com os nossos clientes, com a sociedade, agir sempre com
+              transparência e ética, o respeito, e estar sempre aberto a grandes
+              desafios.
+            </p>
           </div>
-          <p className="mt-2 text-justify">
-            Nossos principais pilares de valores são a responsabilidade para com
-            os nossos clientes, com a sociedade, agir sempre com transparência e
-            ética, o respeito, e estar sempre aberto a grandes desafios.
-          </p>
         </div>
-        <p className="text-lg font-bold mt-2 text-center">FUNDADORES</p>
-        <div className="block text-center justify-center pt-2 md:flex lg:">
+
+        <p className="text-lg font-bold mt-12 text-center">FUNDADORES</p>
+        <div className="block text-center justify-center md:flex">
           <div
-            className="flex flex-wrap items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
+            className="flex items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
             id="av"
           >
             <Image
@@ -152,7 +138,7 @@ const About = () => {
             <p className="ml-2">Anthony Victor</p>
           </div>
           <div
-            className="flex flex-wrap items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
+            className="flex items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
             id="av"
           >
             <Image
@@ -164,7 +150,7 @@ const About = () => {
             <p className="ml-2">Matheus Araújo</p>
           </div>
           <div
-            className="flex flex-wrap items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
+            className="flex items-center justify-center bg-blue-900 p-1 m-4  rounded-md text-white md:p-4"
             id="av"
           >
             <Image
