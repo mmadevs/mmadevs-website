@@ -21,15 +21,15 @@ export const NavBar = () => {
       <nav
         className={
           isNavExpanded
-            ? "w-screen h-screen bg-blue-50"
-            : "w-screen bg-dark-blue sticky top-0  h-16 p-4 lg:flex justify-between"
+            ? "w-screen h-screen fixed bg-blue-50 z-50 overflow-hidden"
+            : "w-screen z-10 bg-dark-blue sticky top-0  h-16 p-4 lg:flex justify-between"
         }
       >
         <Link href="/" className={isNavExpanded ? "hidden" : "left-10"}>
           <LogoImg />
         </Link>
         <button
-          className="absolute mt-2.5 top-0 right-4 float-right text-white bg-blue-800 rounded-xl p-3 text-lg z-40 lg:hidden lg:right-12 "
+          className="absolute mt-2.5 top-0 right-6 float-right text-white bg-blue-800 rounded-xl p-3 text-lg z-40 lg:hidden lg:right-12 "
           onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}
