@@ -13,7 +13,7 @@ const Welcome = () => {
         className="bg-[url('/assets/img/bg.jpg')] bg-cover z-0 w-screen h-screen"
         id="home"
       >
-        <div className="w-screen h-screen text-white text-center bg-dark-blue/90 z-10 pt-20 md: lg:">
+        <div className="w-screen h-screen text-white text-center bg-dark-blue/90 z-10 md: lg:">
           <div className="box-border flex flex-wrap justify-center items-center pt-5 pl-8 pr-8 md: lg:">
             <Swiper
               spaceBetween={50}
