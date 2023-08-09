@@ -2,11 +2,11 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import { NavItem } from "../molecules/NavItem";
-import { INavItem } from "../types/navItem";
+import { INavItem } from "@/app/types/navItem";
 
 import Link from "next/link";
 import { NavBarButton } from "../atoms/NavBarButton";
-import { useNavBar } from "../context/navbarContext";
+import { useNavBar } from "@/app/context/navbarContext";
 
 export const NavBarMenu: FunctionComponent = () => {
   const { navItems, isNavBarOpen, setIsNavBarOpen } = useNavBar();
