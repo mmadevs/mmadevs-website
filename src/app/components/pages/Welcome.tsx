@@ -5,15 +5,13 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/bundle";
+import PageLayout from "../templates/PageLayout";
 
 const Welcome = () => {
   return (
-    <>
-      <div
-        className="bg-[url('/assets/img/bg.jpg')] bg-cover z-0 w-screen h-screen"
-        id="home"
-      >
-        <div className="w-screen h-screen text-white text-center bg-dark-blue/90 z-10 md: lg:">
+    <PageLayout id="home">
+      <div className="bg-[url('/assets/img/bg.jpg')] bg-cover z-0 w-screen h-screen">
+        <div className="w-screen h-screen text-white text-center bg-dark-blue/95 z-10 md: lg:">
           <div className="box-border flex flex-wrap justify-center items-center pt-5 pl-8 pr-8 md: lg:">
             <Swiper
               spaceBetween={50}
@@ -25,7 +23,7 @@ const Welcome = () => {
               speed={2000}
               effect="fade"
               modules={[Autoplay, EffectFade, Pagination]}
-              className=""
+              className="hideen"
               breakpoints={{
                 1024: {
                   spaceBetween: 50,
@@ -97,7 +95,7 @@ const Welcome = () => {
           </a>
         </div>
       </div>
-    </>
+    </PageLayout>
   );
 };
 

@@ -1,3 +1,5 @@
+"use client";
+import NavBarProvider from "./context/navbarContext";
 import Footer from "./organisms/Footer";
 import { NavBar } from "./organisms/NavBar";
 import About from "./pages/About";
@@ -7,13 +9,15 @@ import Welcome from "./pages/Welcome";
 
 export default function App() {
   return (
-    <>
-      <NavBar />
-      <Welcome />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
+    <NavBarProvider>
+      <div className="relative w-full h-screen min-h-screen overflow-auto scroll-smooth">
+        <NavBar />
+        <Welcome />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </NavBarProvider>
   );
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Projects = () => {
   return (
-    <div className="w-screen h-screen md:h-fit text-black p-10" id="portfolio">
+    <div className="w-screen h-screen md:h-fit text-black p-10" id="projects">
       <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
         {/* <FcInfo className="mr-3 text-4xl" /> */}
         PROJETOS REALIZADOS
