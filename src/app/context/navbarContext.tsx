@@ -35,7 +35,7 @@ const NavBarProvider: FunctionComponent<{
     { label: "HOME", route: "#home" },
     { label: "SOBRE", route: "#about" },
     { label: "PROJETOS", route: "#projects" },
-    { label: "FALE CONOSCO", route: "#contact-us" },
+    { label: "CONTATO", route: "#contact-us" },
   ];
 
   return (
