@@ -11,7 +11,7 @@ module.exports = {
         "dark-blue": "#131521",
       },
       backgroundImage: {
-        "hero-pattern": "url('/assets/img/bg.jpg')",
+        "bg-img": "url('/assets/img/bg.png')",
       },
     },
   },

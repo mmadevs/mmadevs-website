@@ -18,7 +18,7 @@ export const NavBarMenu: FunctionComponent = () => {
     inset-0 z-50
     text-dark-blue bg-blue-50 p-6 
     lg:text-white lg:bg-transparent lg:py-2 
-    flex flex-col
+    flex flex-col items-center justify-center
     `}
     >
       <button
@@ -33,7 +33,7 @@ export const NavBarMenu: FunctionComponent = () => {
     flex flex-col 
     text-center items-center justify-center 
     w-full h-full
-    lg:flex-row
+    lg:flex-row gap-4
     `}
       >
         {navItems.map((item) => (

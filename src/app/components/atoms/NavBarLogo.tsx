@@ -8,7 +8,7 @@ export const NavBarLogo = () => {
         src="/assets/img/logo.png"
         className=""
         alt="MMA Devs logo"
-        width={160}
+        width={220}
         height={30}
       />
     </Link>

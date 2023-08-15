@@ -1,8 +1,13 @@
 import Image from "next/image";
+import PageLayout from "@/app/components/templates/PageLayout";
 
 export const Projects = () => {
   return (
-    <div className="w-screen h-screen md:h-fit text-black p-10" id="projects">
+    <PageLayout
+      className="w-screen h-screen md:h-fit text-black p-10"
+      id="projects"
+      bg="light"
+    >
       <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
         {/* <FcInfo className="mr-3 text-4xl" /> */}
         PROJETOS REALIZADOS
@@ -58,7 +63,7 @@ export const Projects = () => {
           ></Image>
         </a>
       </div>
-    </div>
+    </PageLayout>
   );
 };
 

@@ -1,100 +1,59 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/bundle";
 import PageLayout from "../templates/PageLayout";
+import { useInView } from "react-intersection-observer";
+
+import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
 
 const Welcome = () => {
+  const { ref, inView } = useInView();
+
   return (
-    <PageLayout id="home">
-      <div className="bg-[url('/assets/img/bg.jpg')] bg-cover z-0 w-screen h-screen">
-        <div className="w-screen h-screen text-white text-center bg-dark-blue/95 z-10 md: lg:">
-          <div className="box-border flex flex-wrap justify-center items-center pt-5 pl-8 pr-8 md: lg:">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-              autoplay={{ delay: 2000 }}
-              pagination={{ clickable: true }}
-              speed={2000}
-              effect="fade"
-              modules={[Autoplay, EffectFade, Pagination]}
-              className="hideen"
-              breakpoints={{
-                1024: {
-                  spaceBetween: 50,
-                  slidesPerView: 1,
-                },
-              }}
-              centeredSlides={true}
-            >
-              <SwiperSlide>
-                <div className="flex justify-center items-center">
-                  <Image
-                    src="/assets/img/image-1.png"
-                    alt=""
-                    width={500}
-                    height={0}
-                    className="rounded-lg"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex justify-center items-center">
-                  <Image
-                    src="/assets/img/image-1.png"
-                    alt=""
-                    width={500}
-                    height={0}
-                    className="rounded-lg"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex justify-center items-center">
-                  <Image
-                    src="/assets/img/image-1.png"
-                    alt=""
-                    width={500}
-                    height={0}
-                    className="rounded-lg"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="flex justify-center items-center">
-                  <Image
-                    src="/assets/img/image-1.png"
-                    alt=""
-                    width={500}
-                    height={0}
-                    className="rounded-lg"
-                  />
-                </div>
-              </SwiperSlide>
-              <br />
-              <p className="text-transparent">...</p>
-            </Swiper>
-          </div>
-          <p className="text-4xl text-center font-bold text-sky-400 pb-0 pt-0 md:text-center lg:text-5xl">
-            A solução para o seu negócio.
+    <PageLayout
+      id="home"
+      bg="dark"
+      _ref={ref}
+      className="flex flex-col pt-24 px-16 h-screen text-white max-w-full bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
+    >
+      <div className="flex-1"></div>
+      <div className="flex-1 grid grid-cols-2 grid-rows-4 gap-y-4 w-full">
+        <aside className="flex flex-col items-start justify-center gap-4 row-span-3">
+          <h1 className="text-6xl font-bold 2xl:text-8xl">
+            Tecnologia para o seu negócio!
+          </h1>
+          <p className="text-xl 2xl:text-3xl">
+            Tudo o que você precisa, de forma ágil, eficaz e com valor justo,
+            que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
           </p>
-          <p className="p-4 text-center md:text-center mb-6">
-            Entregamos o que você precisa, de forma ágil, eficaz e com valor
-            justo, que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
-          </p>
-          <a
-            className="rounded-lg p-4 text-white bg-blue-800 hover:bg-blue-600"
-            href="#contact-us"
-          >
+          <button className="bg-blue-500 text-xl 2xl:text-3xl py-4 px-8 rounded-md">
             Solicitar orçamento
-          </a>
-        </div>
+          </button>
+          <div id="google-reviews text-xl">
+            <p className="text-lg 2xl:text-2xl">***** Google reviews</p>
+          </div>
+        </aside>
+        <aside className="col-start-2 row-span-3">
+          <div className="relative w-full h-full overflow-visible">
+            <Image
+              src="/assets/img/figure-1.svg"
+              alt="Person using computer"
+              layout="fill"
+              className="overflow-visible"
+              objectFit="cover"
+            />
+          </div>
+        </aside>
+        <footer className="col-start-1 col-span-2 row-start-4 text-blue-500 text-3xl flex gap-4">
+          <BsFacebook />
+          <BsWhatsapp />
+          <BsInstagram />
+        </footer>
       </div>
+      <div className="flex-1 "></div>
     </PageLayout>
   );
 };

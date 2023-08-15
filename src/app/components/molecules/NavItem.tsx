@@ -7,12 +7,13 @@ import { useNavBar } from "@/app/context/navbarContext";
 export const NavItem: FunctionComponent<{
   item: INavItem;
 }> = ({ item }) => {
-  const { setIsNavBarOpen } = useNavBar();
+  const { setIsNavBarOpen, currentRoute, setCurrentRoute } = useNavBar();
   return (
-    <li className="p-3 lg:pt-0">
+    <li className="text-lg">
       <Link
         href={item.route}
         onClick={() => {
+          setCurrentRoute(item.route);
           setIsNavBarOpen(false);
           document
             .querySelector(item.route)
@@ -22,6 +23,11 @@ export const NavItem: FunctionComponent<{
       >
         {item.label}
       </Link>
+      <div
+        className={`h-1 w-full bg-blue-500 ${
+          currentRoute === item.route ? "opacity-100" : "opacity-0"
+        } `}
+      ></div>
     </li>
   );
 };
