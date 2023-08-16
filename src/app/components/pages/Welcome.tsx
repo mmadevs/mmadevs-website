@@ -8,6 +8,7 @@ import PageLayout from "../templates/PageLayout";
 import { useInView } from "react-intersection-observer";
 
 import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
+import { MdStar } from "react-icons/md";
 
 const Welcome = () => {
   const { ref, inView } = useInView();
@@ -16,44 +17,44 @@ const Welcome = () => {
     <PageLayout
       id="home"
       bg="dark"
-      _ref={ref}
-      className="flex flex-col pt-24 px-16 h-screen text-white max-w-full bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
+      className="flex flex-col min-h-screen text-white bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
     >
-      <div className="flex-1"></div>
-      <div className="flex-1 grid grid-cols-2 grid-rows-4 gap-y-4 w-full">
+      <div className="flex-1 lg:grid grid-cols-2 grid-rows-4 gap-y-4 w-full flex flex-col text-center lg:text-left">
         <aside className="flex flex-col items-start justify-center gap-4 row-span-3">
-          <h1 className="text-6xl font-bold 2xl:text-8xl">
+          <h1 className="text-3xl lg:text-6xl font-bold 2xl:text-8xl">
             Tecnologia para o seu negócio!
           </h1>
-          <p className="text-xl 2xl:text-3xl">
+          <p className="text-md lg:text-xl 2xl:text-3xl">
             Tudo o que você precisa, de forma ágil, eficaz e com valor justo,
             que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
           </p>
-          <button className="bg-blue-500 text-xl 2xl:text-3xl py-4 px-8 rounded-md">
+          <button className="self-center lg:self-start bg-blue-500 text-xl 2xl:text-3xl py-4 px-8 rounded-md">
             Solicitar orçamento
           </button>
-          <div id="google-reviews text-xl">
-            <p className="text-lg 2xl:text-2xl">***** Google reviews</p>
+          <div className="flex items-center justify-center lg:justify-start gap-1 w-full lg:text-left text-lg 2xl:text-2xl">
+            <ul className="flex text-yellow-300">
+              {new Array(5).fill("").map((_, i) => (
+                <MdStar key={i} />
+              ))}
+            </ul>
+            <p className=" ">Google reviews</p>
           </div>
         </aside>
-        <aside className="col-start-2 row-span-3">
-          <div className="relative w-full h-full overflow-visible">
-            <Image
-              src="/assets/img/figure-1.svg"
-              alt="Person using computer"
-              layout="fill"
-              className="overflow-visible"
-              objectFit="cover"
-            />
-          </div>
+        <aside className="relative col-start-2 row-span-3 flex overflow-visible w-full aspect-video lg:aspect-auto ">
+          <Image
+            src="/assets/img/figure-1.svg"
+            alt="Person using computer"
+            fill
+            className="overflow-visible"
+            objectFit="cover"
+          />
         </aside>
-        <footer className="col-start-1 col-span-2 row-start-4 text-blue-500 text-3xl flex gap-4">
+        <footer className="col-start-1 col-span-2 row-start-4 text-blue-500 text-3xl flex justify-center lg:justify-start gap-4 pt-12">
           <BsFacebook />
           <BsWhatsapp />
           <BsInstagram />
         </footer>
       </div>
-      <div className="flex-1 "></div>
     </PageLayout>
   );
 };
