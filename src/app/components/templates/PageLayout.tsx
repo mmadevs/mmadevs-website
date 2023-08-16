@@ -8,7 +8,6 @@ interface PageLayoutProps {
   id: string;
   className?: string;
   children: ReactNode | ReactNode[];
-  _ref?: any;
   bg: "dark" | "light";
 }
 
@@ -16,7 +15,6 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   id,
   className,
   children,
-  _ref,
   bg,
 }) => {
   const { ref, inView } = useInView({
@@ -24,10 +22,9 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
     rootMargin: "20px",
   });
 
-  const { currentRoute, setCurrentRoute } = useNavBar();
+  const { setCurrentRoute } = useNavBar();
 
   useEffect(() => {
-    console.log(`${id} is in view:`, inView);
     if (inView) {
       setCurrentRoute(`#${id}`);
     }
@@ -36,13 +33,14 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   return (
     <main
       id={id}
-      className={`gap-8 p-8 py-24 w-screen min-h-screen max-w-screen overflow-hidden 
-      
+      className={`px-2 lg:px-8 pt-[80px] gap-8 w-full min-h-screen flex
       ${bg === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"}
       ${className ?? ""}`}
     >
-      <div className="w-full h-auto min-h-screen" ref={ref}>
+      <div className="flex flex-col flex-1 w-full h-full" ref={ref}>
+        <div className="flex-1"></div>
         {children}
+        <div className="flex-1"></div>
       </div>
     </main>
   );

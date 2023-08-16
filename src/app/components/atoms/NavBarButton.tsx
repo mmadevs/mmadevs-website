@@ -8,7 +8,7 @@ export const NavBarButton: FunctionComponent = () => {
   const { setIsNavBarOpen } = useNavBar();
   return (
     <button
-      className="text-white bg-blue-800 rounded-xl p-3 text-lg lg:hidden"
+      className="text-white p-3 text-3xl lg:hidden"
       onClick={() => setIsNavBarOpen(true)}
     >
       <MdMenu />

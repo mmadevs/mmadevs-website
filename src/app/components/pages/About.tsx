@@ -13,7 +13,7 @@ import PageLayout from "../templates/PageLayout";
 
 const About = () => {
   return (
-    <PageLayout id="about">
+    <PageLayout id="about" bg={"dark"} className="">
       <div className="w-screen max-w-full text-dark-blue p-10 pb-8 border-t-2 border-b-2 border-gray-200">
         <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
           QUEM SOMOS?

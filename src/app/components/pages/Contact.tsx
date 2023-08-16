@@ -114,9 +114,8 @@ export const Contact = () => {
 
   return (
     <PageLayout id="contact-us" bg="light">
-      <div className="w-screen text-black p-10 bg-blue-50 border-t-2 border-b-2 border-gray-200 ">
-        <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
-          {/* <FcInfo className="mr-3 text-4xl" /> */}
+      <div className="w-full text-black ">
+        {/* <p className="text-2xl font-bold flex items-center text-justify">
           FALE CONOSCO
         </p>
         <p className="text-justify mt-4 lg:m-12">
@@ -140,7 +139,7 @@ export const Contact = () => {
           >
             Enviar mensagem
           </button>
-        </form>
+        </form> */}
       </div>
     </PageLayout>
   );

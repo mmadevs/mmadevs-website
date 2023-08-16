@@ -7,15 +7,25 @@ import { NavItem } from "../molecules/NavItem";
 import Link from "next/link";
 import { NavBarButton } from "../atoms/NavBarButton";
 import { NavBarMenu } from "./NavBarMenu";
+import Image from "next/image";
+import { Line } from "../atoms/Line";
 
 export const NavBar = () => {
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 p-4 bg-gray-950 bg-opacity-80 shadow-2xl backdrop-blur-sm flex justify-between items-center px-8`}
+    <header
+      className={`fixed top-0 w-full z-50 h-[80px]
+      bg-gray-950 bg-opacity-80 shadow-2xl 
+      backdrop-blur-sm flex flex-col 
+      justify-between items-center`}
     >
-      <NavBarLogo />
-      <NavBarButton />
-      <NavBarMenu />
-    </nav>
+      <nav
+        className={`w-full flex-1 py-4 flex justify-between items-center px-8`}
+      >
+        <NavBarLogo />
+        <NavBarButton />
+        <NavBarMenu />
+      </nav>
+      <Line />
+    </header>
   );
 };
