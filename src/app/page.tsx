@@ -10,8 +10,8 @@ import Welcome from "@/app/components/pages/Welcome";
 export default function App() {
   return (
     <NavBarProvider>
-      <div className="w-full h-auto min-h-screen bg-gray-950">
-        <div className="relative w-full min-h-screen h-auto overflow-auto scroll-smooth">
+      <div className="relative w-full h-auto min-h-screen bg-gray-950 overflow-auto scroll-smooth snap-y snap-mandatory">
+        <div className={`relative w-full min-h-screen h-auto`}>
           <NavBar />
           <Welcome />
           <About />

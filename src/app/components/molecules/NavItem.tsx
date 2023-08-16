@@ -9,7 +9,7 @@ export const NavItem: FunctionComponent<{
 }> = ({ item }) => {
   const { setIsNavBarOpen, currentRoute, setCurrentRoute } = useNavBar();
   return (
-    <li className="text-lg">
+    <li className="text-4xl lg:text-lg">
       <Link
         href={item.route}
         onClick={() => {
@@ -19,13 +19,15 @@ export const NavItem: FunctionComponent<{
             .querySelector(item.route)
             ?.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
-        className="hover:bg-blue-100 p-2 rounded-md lg:hover:bg-transparent hover:text-blue-500"
+        className={`p-2 hover:text-blue-500 transition-all`}
       >
         {item.label}
       </Link>
       <div
         className={`h-1 w-full bg-blue-500 ${
-          currentRoute === item.route ? "opacity-100" : "opacity-0"
+          currentRoute === item.route
+            ? "opacity-100 animate-fade"
+            : "opacity-0 "
         } `}
       ></div>
     </li>
