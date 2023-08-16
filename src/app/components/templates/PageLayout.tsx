@@ -33,12 +33,11 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   return (
     <main
       id={id}
-      className={`min-w-[320px] gap-8 px-2 lg:px-8 py-12
-      w-screen min-h-screen max-w-screen      
+      className={`px-2 lg:px-8 pt-[80px] gap-8 w-full min-h-screen flex
       ${bg === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"}
       ${className ?? ""}`}
     >
-      <div className="w-full min-h-screen flex flex-col" ref={ref}>
+      <div className="flex flex-col flex-1 w-full h-full" ref={ref}>
         <div className="flex-1"></div>
         {children}
         <div className="flex-1"></div>

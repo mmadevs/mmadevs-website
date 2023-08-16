@@ -3,13 +3,8 @@ import PageLayout from "@/app/components/templates/PageLayout";
 
 export const Projects = () => {
   return (
-    <PageLayout
-      className="w-screen h-screen md:h-fit text-black p-10"
-      id="projects"
-      bg="light"
-    >
-      <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
-        {/* <FcInfo className="mr-3 text-4xl" /> */}
+    <PageLayout className="" id="projects" bg="light">
+      {/* <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
         PROJETOS REALIZADOS
       </p>
       <p className="text-justify mt-4 mb-8 lg:m-12">
@@ -62,7 +57,7 @@ export const Projects = () => {
             className=""
           ></Image>
         </a>
-      </div>
+      </div> */}
     </PageLayout>
   );
 };

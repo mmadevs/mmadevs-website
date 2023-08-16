@@ -11,7 +11,7 @@ import { NavBarMenu } from "./NavBarMenu";
 export const NavBar = () => {
   return (
     <nav
-      className={`fixed top-0 w-full z-50 p-4 
+      className={`fixed top-0 w-full z-50 p-4 h-[80px]
       bg-gray-950 bg-opacity-80 shadow-2xl 
       backdrop-blur-sm flex 
       justify-between items-center px-8`}

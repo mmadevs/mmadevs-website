@@ -7,7 +7,7 @@ import Image from "next/image";
 export const Strategic = () => {
   return (
     <PageLayout id="strategic" bg="light">
-      <div className="w-screen h-screen text-dark-blue p-10">
+      {/* <div className="w-screen h-screen text-dark-blue p-10">
         <p className="bg-pink-500 text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
           NOSSO FOCO
         </p>
@@ -75,7 +75,7 @@ export const Strategic = () => {
             <p className="ml-2">Matheus Nascimento</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </PageLayout>
   );
 };
