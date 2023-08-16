@@ -8,10 +8,23 @@ import { useInView } from "react-intersection-observer";
 
 import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { MdStar } from "react-icons/md";
+import Link from "next/link";
+import { IconBase } from "react-icons/lib";
 
 const Welcome = () => {
   const { ref, inView } = useInView();
 
+  const footerIcons = [
+    { icon: <BsFacebook />, href: "https://www.facebook.com/mmadevs" },
+    {
+      icon: <BsWhatsapp />,
+      href: "https://api.whatsapp.com/send?phone=+5571986366233&text=Olá",
+    },
+    {
+      icon: <BsInstagram />,
+      href: "https://www.instagram.com/mma_devs",
+    },
+  ];
   return (
     <PageLayout
       id="home"
@@ -23,7 +36,7 @@ const Welcome = () => {
       flex flex-col text-center lg:text-left"
       >
         <aside
-          className="flex flex-col justify-center items-center lg:items-start 
+          className="flex flex-col place-self-end justify-center items-center lg:items-start 
         gap-4 row-span-3"
         >
           <p className="text-3xl lg:text-6xl w-full font-bold 2xl:text-8xl">
@@ -33,7 +46,10 @@ const Welcome = () => {
             Tudo o que você precisa, de forma ágil, eficaz e com valor justo,
             que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
           </p>
-          <button className="self-center lg:self-start bg-blue-500 text-xl 2xl:text-3xl py-4 px-8 rounded-md">
+          <button
+            className="self-center lg:self-start bg-blue-500 text-xl 2xl:text-3xl 
+          py-3 px-8 rounded-xl hover:bg-transparent hover:text-blue-400 transition-all border-blue-500 border-4"
+          >
             Solicitar orçamento
           </button>
           <div className="flex items-center justify-center lg:justify-start gap-1 lg:text-left text-lg 2xl:text-2xl">
@@ -54,10 +70,12 @@ const Welcome = () => {
             objectFit="cover"
           />
         </aside>
-        <footer className="col-start-1 col-span-2 row-start-4 text-blue-500 text-3xl flex justify-center lg:justify-start gap-4 pt-12">
-          <BsFacebook />
-          <BsWhatsapp />
-          <BsInstagram />
+        <footer className="col-start-1 row-start-4 text-blue-500 text-3xl flex justify-center lg:justify-start gap-4 pt-12 items-end">
+          {footerIcons.map((x) => (
+            <Link key={x.href} href={x.href} target="_blank">
+              <IconBase className="hover:text-white">{x.icon}</IconBase>
+            </Link>
+          ))}
         </footer>
       </div>
     </PageLayout>

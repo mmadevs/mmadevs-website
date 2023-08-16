@@ -10,10 +10,10 @@ import Welcome from "@/app/components/pages/Welcome";
 export default function App() {
   return (
     <NavBarProvider>
-      <div className="bg-black relative w-screen h-auto min-h-screen overflow-auto">
+      <div className="bg-black relative w-full h-auto min-h-screen overflow-auto">
         <NavBar />
         <Welcome />
-        {/* <About /> */}
+        <About />
         {/* <Projects /> */}
         {/* <Contact /> */}
         {/* <Footer /> */}
