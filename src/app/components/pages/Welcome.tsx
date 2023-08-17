@@ -66,8 +66,7 @@ const Welcome = () => {
             src="/assets/img/figure-1.svg"
             alt="Person using computer"
             fill
-            className="overflow-visible"
-            objectFit="cover"
+            className="overflow-visible object-cover"
           />
         </aside>
         <footer className="col-start-1 row-start-4 text-blue-500 text-3xl flex justify-center lg:justify-start gap-4 pt-12 items-end">

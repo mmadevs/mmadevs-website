@@ -1,13 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavBarLogo } from "../atoms/NavBarLogo";
-import { MdMenu, MdClose } from "react-icons/md";
-import { NavItem } from "../molecules/NavItem";
-
-import Link from "next/link";
 import { NavBarButton } from "../atoms/NavBarButton";
 import { NavBarMenu } from "./NavBarMenu";
-import Image from "next/image";
 import { Line } from "../atoms/Line";
 
 export const NavBar = () => {

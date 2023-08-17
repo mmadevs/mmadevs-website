@@ -37,7 +37,7 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
       ${bg === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"}
       ${className ?? ""}`}
     >
-      <div className="flex flex-col flex-1 w-full h-full" ref={ref}>
+      <div className="flex flex-col flex-1 w-full h-full py-8" ref={ref}>
         <div className="flex-1"></div>
         {children}
         <div className="flex-1"></div>

@@ -4,16 +4,75 @@ import Image from "next/image";
 import { TbTargetArrow } from "react-icons/tb";
 import { AiFillEye } from "react-icons/ai";
 import { FaBalanceScale } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Scrollbar } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/bundle";
 import PageLayout from "../templates/PageLayout";
+import { DevInfo } from "../molecules/DevInfo";
+import { TabsContainer } from "../organisms/TabsContainer";
 
 const About = () => {
   return (
     <PageLayout id="about" bg={"dark"} className="">
+      <section className="flex flex-col gap-8">
+        <h1 className="text-center text-3xl font-semibold">SERVIÇOS</h1>
+
+        <TabsContainer
+          items={[
+            {
+              label: "WEBSITES",
+              route: "#websites-tab-item",
+              component: {
+                title: "SITES",
+                description:
+                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
+                centralImage: "/assets/img/services-websites.svg",
+              },
+            },
+            {
+              label: "WEB APPS",
+              route: "#webapps-tab-item",
+              component: {
+                title: "APLICAÇÕES WEB",
+                description:
+                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
+                centralImage: "/assets/img/services-websites.svg",
+              },
+            },
+            {
+              label: "MOBILE APPS",
+              route: "#mobileapps-tab-item",
+              component: {
+                title: "APPS MOBILE",
+                description:
+                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
+                centralImage: "/assets/img/services-websites.svg",
+              },
+            },
+          ]}
+        />
+      </section>
+
+      <section>
+        <h1>NOSSO TIME</h1>
+        <div className="flex items-center gap-8 w-full justify-center">
+          <DevInfo
+            name="Matheus Araújo"
+            githubUser="matheusdearaujo"
+            linkedinUser="matheussouzadearaujo"
+          />
+          <span className="rounded-full w-2 h-2 bg-white" />
+          <DevInfo
+            name="Matheus Nascimento"
+            githubUser="matthns"
+            linkedinUser="matthns"
+          />
+          <span className="rounded-full w-2 h-2 bg-white" />
+          <DevInfo
+            name="Anthony Victor"
+            githubUser="anthonyvictor"
+            linkedinUser="thonnyvrc"
+          />
+        </div>
+      </section>
+
       <div className="w-screen max-w-full text-dark-blue p-10 pb-8 border-t-2 border-b-2 border-gray-200">
         <p className="text-2xl font-bold flex items-center text-justify lg:pl-12 lg:pr-12">
           QUEM SOMOS?
@@ -26,7 +85,7 @@ const About = () => {
           da Informação e em Desenvolvimento de Software.
         </p>
         <div className="box-border flex flex-wrap justify-center text-white mt-4">
-          <Swiper
+          {/* <Swiper
             spaceBetween={50}
             slidesPerView={1}
             onSlideChange={() => console.log("slide change")}
@@ -81,7 +140,7 @@ const About = () => {
               </div>
             </SwiperSlide>
             ...
-          </Swiper>
+          </Swiper> */}
         </div>
 
         <div className="mt-12" id="strategic">
