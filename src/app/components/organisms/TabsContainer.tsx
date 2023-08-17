@@ -73,11 +73,11 @@ export const TabsContainer = ({
               key={item.route}
               id={item.route.replace("#", "")}
               className={`
-                shrink-0 w-full h-96 snap-always snap-start flex flex-col lg:flex-row
+                shrink-0 w-full h-80 snap-always snap-start flex flex-col lg:flex-row
                 `}
             >
               {/* px-4 lg:px-16 max-w-6xl */}
-              <aside className="flex flex-col justify-center gap-2">
+              <aside className="flex-1 flex flex-col justify-center gap-2">
                 <h1
                   className={`text-3xl lg:text-5xl font-semibold animate-fade-left lg:animate-fade-down animate-delay-75 animate-duration-[2s] ${
                     selectedTab === item.route ? "" : "hidden"
@@ -96,15 +96,17 @@ export const TabsContainer = ({
                   <Link href={item.component.href}>Visitar...</Link>
                 )}
               </aside>
-              <aside className="relative flex w-full h-full">
-                <Image
-                  className={`text-lg animate-fade animate-delay-500 animate-duration-[2s] ${
-                    selectedTab === item.route ? "" : "hidden"
-                  }`}
-                  src={item.component.centralImage}
-                  alt="aaa"
-                  fill
-                />
+              <aside className="flex-1 flex">
+                <div className="relative aspect-square h-full mx-auto flex">
+                  <Image
+                    className={`text-lg object-cover overflow-visible animate-fade animate-delay-500 animate-duration-[2s] ${
+                      selectedTab === item.route ? "" : "hidden"
+                    }`}
+                    src={item.component.centralImage}
+                    alt="aaa"
+                    fill
+                  />
+                </div>
               </aside>
             </div>
           ))}

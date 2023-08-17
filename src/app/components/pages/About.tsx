@@ -21,8 +21,7 @@ const About = () => {
               route: "#websites-tab-item",
               component: {
                 title: "SITES",
-                description:
-                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
+                description: `Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.`,
                 centralImage: "/assets/img/services-websites.svg",
               },
             },
@@ -31,9 +30,9 @@ const About = () => {
               route: "#webapps-tab-item",
               component: {
                 title: "APLICAÇÕES WEB",
-                description:
-                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
-                centralImage: "/assets/img/services-websites.svg",
+                description: `Aplicações completas em navegadores, sem necessidade de instalação.
+                  Podem ser acessadas de qualquer dispositivo com acesso à internet.`,
+                centralImage: "/assets/img/services-webapps.svg",
               },
             },
             {
@@ -41,9 +40,19 @@ const About = () => {
               route: "#mobileapps-tab-item",
               component: {
                 title: "APPS MOBILE",
-                description:
-                  "Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.",
-                centralImage: "/assets/img/services-websites.svg",
+                description: `Aplicações para smartphones Android e iOS
+                  Podem ser utilizadas offline.`,
+                centralImage: "/assets/img/services-mobileapps.svg",
+              },
+            },
+            {
+              label: "CONSULTORIA",
+              route: "#consulting-tab-item",
+              component: {
+                title: "CONSULTORIA DE TI",
+                description: `Análise sob medida para o seu negócio.
+                Assessoria especializada em tecnologia da informação`,
+                centralImage: "/assets/img/services-consulting.svg",
               },
             },
           ]}
