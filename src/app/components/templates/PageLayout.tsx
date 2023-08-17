@@ -17,18 +17,19 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   children,
   bg,
 }) => {
-  const { ref, inView } = useInView({
-    initialInView: false,
-    rootMargin: "20px",
+  const { ref, inView, entry } = useInView({
+    // initialInView: false,
+    // rootMargin: "20px",
   });
 
   const { setCurrentRoute } = useNavBar();
 
   useEffect(() => {
-    if (inView) {
+    console.log(id, entry?.intersectionRatio);
+    if (entry?.intersectionRatio ?? 0 > 0.5) {
       setCurrentRoute(`#${id}`);
     }
-  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [inView, entry?.intersectionRatio]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <main
