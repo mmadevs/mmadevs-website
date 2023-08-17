@@ -37,7 +37,7 @@ export const TabsContainer = ({
         behavior: "smooth",
       });
     }
-  }, [selectedTab]);
+  }, [selectedTab]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const doScroll = () => {
@@ -49,7 +49,7 @@ export const TabsContainer = ({
         `proximo: ${
           nextItem.route
         }, atual index: ${currentIndex}, proximo encontrado: ${
-          foundItem.route
+          (foundItem ?? items[0]).route
         }, items: ${items.map((x) => x.route)}`
       );
 
@@ -61,7 +61,7 @@ export const TabsContainer = ({
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="relative flex flex-col gap-8">
@@ -100,7 +100,8 @@ export const TabsContainer = ({
               key={item.route}
               id={item.route.replace("#", "")}
               className={`
-                shrink-0 w-full h-80 snap-always snap-start flex flex-col lg:flex-row
+                shrink-0 w-full h-96 snap-always snap-start flex flex-col lg:flex-row
+                bg-[url('/assets/img/services-websites-bg-desktop.png')] bg-opacity-0 bg-no-repeat bg-cover p-8
                 `}
             >
               {/* px-4 lg:px-16 max-w-6xl */}
