@@ -32,17 +32,17 @@ const Welcome = () => {
       className="flex flex-col text-white bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
     >
       <div
-        className="flex-1 lg:grid grid-cols-2 grid-rows-4 gap-y-4 
+        className="flex-1 lg:grid grid-cols-2 grid-rows-4 gap-y-4 max-w-7xl mx-auto
       flex flex-col text-center lg:text-left"
       >
         <aside
           className="flex flex-col place-self-end justify-center items-center lg:items-start 
         gap-4 row-span-3"
         >
-          <p className="text-3xl lg:text-6xl w-full font-bold 2xl:text-8xl">
+          <p className="text-3xl lg:text-6xl w-full font-bold 2xl:text-7xl">
             Tecnologia para o seu negócio!
           </p>
-          <p className="text-md lg:text-xl 2xl:text-3xl w-full">
+          <p className="text-md lg:text-xl 2xl:text-2xl w-full">
             Tudo o que você precisa, de forma ágil, eficaz e com valor justo,
             que cabe no seu bolso. Faça hoje mesmo um orçamento conosco!
           </p>
@@ -66,8 +66,7 @@ const Welcome = () => {
             src="/assets/img/figure-1.svg"
             alt="Person using computer"
             fill
-            className="overflow-visible"
-            objectFit="cover"
+            className="overflow-visible object-cover"
           />
         </aside>
         <footer className="col-start-1 row-start-4 text-blue-500 text-3xl flex justify-center lg:justify-start gap-4 pt-12 items-end">
