@@ -64,14 +64,17 @@ export const TabsContainer = ({
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="relative flex flex-col gap-8">
-      <header>
-        <ul className="flex gap-4 justify-center overflow-x-auto no-scrollbar">
+    <div className="relative flex flex-col gap-8 w-full min-w-0">
+      <header className="flex max-w-full min-w-0 w-full">
+        <ul
+          className="flex-1 flex gap-4 px-4 lg:justify-center overflow-x-auto
+           no-scrollbar min-w-0"
+        >
           {items.map((item) => (
             <Link
               key={item.route}
               href={"#"}
-              className="hover:text-blue-500"
+              className="hover:text-blue-500 whitespace-nowrap"
               onClick={(e) => {
                 e.preventDefault();
                 setSelectedTab(item.route);
@@ -87,27 +90,30 @@ export const TabsContainer = ({
           ))}
         </ul>
       </header>
-      <main>
+      <main className="max-w-full min-w-0">
         <ul
           id="horizontal-list"
-          className={`overflow-y-hidden relative flex w-full
+          className={`overflow-y-hidden relative flex max-w-full
           min-w-0 overflow-x-auto scroll-smooth snap-mandatory snap-x
           no-scrollbar pointer-events-none`}
           ref={componentsContainerRef}
         >
           {items.map((item) => (
             <div
+              style={{
+                backgroundImage: `url('${item.component.bgDesktop}')`,
+              }}
               key={item.route}
               id={item.route.replace("#", "")}
               className={`
-                shrink-0 w-full h-96 snap-always snap-start flex flex-col lg:flex-row
-                bg-[url('/assets/img/services-websites-bg-desktop.png')] bg-opacity-0 bg-no-repeat bg-cover p-8
+                shrink-0 w-full max-w-full h-96 snap-always snap-start flex flex-col lg:flex-row
+                bg-no-repeat bg-cover p-8 overflow-hidden
                 `}
             >
               {/* px-4 lg:px-16 max-w-6xl */}
-              <aside className="flex-1 flex flex-col justify-center gap-2">
+              <aside className="flex-1 flex flex-col justify-center gap-2 max-w-full w-full lg:w-auto">
                 <h1
-                  className={`text-3xl lg:text-5xl font-semibold animate-fade-left lg:animate-fade-down animate-delay-75 animate-duration-[2s] ${
+                  className={`text-3xl whitespace-nowrap lg:text-5xl font-semibold animate-fade-left lg:animate-fade-down animate-delay-75 animate-duration-[2s] ${
                     selectedTab === item.route ? "" : "hidden"
                   }`}
                 >
@@ -124,7 +130,7 @@ export const TabsContainer = ({
                   <Link href={item.component.href}>Visitar...</Link>
                 )}
               </aside>
-              <aside className="flex-1 flex">
+              <aside className="flex-1 flex w-full max-w-full lg:w-auto">
                 <div className="relative aspect-square h-full mx-auto flex">
                   <Image
                     className={`text-lg object-cover overflow-visible animate-fade animate-delay-500 animate-duration-[2s] ${
@@ -140,7 +146,7 @@ export const TabsContainer = ({
           ))}
         </ul>
       </main>
-      <footer className="absolute bottom-0 flex justify-center items-center gap-1 w-full">
+      <footer className="absolute bottom-0 mb-4 flex justify-center items-center gap-1 w-full">
         {items.map((item) => (
           <span
             key={item.route}

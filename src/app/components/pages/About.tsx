@@ -11,8 +11,8 @@ import { TabsContainer } from "../organisms/TabsContainer";
 const About = () => {
   return (
     <PageLayout id="about" bg={"dark"} className={``}>
-      <div className="flex flex-col gap-8 max-w-7xl mx-auto">
-        <section className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 max-w-full 2xl:max-w-7xl mx-auto">
+        <section className="flex flex-col gap-8 w-full min-w-0">
           <h1 className="text-center text-3xl font-semibold">SERVIÇOS</h1>
 
           <TabsContainer
@@ -24,7 +24,7 @@ const About = () => {
                   title: "SITES",
                   description: `Páginas da web para seu comércio, marca ou projeto. Visual atrativo, responsivo, e com foco definido visando as demandas do seu negócio.`,
                   centralImage: "/assets/img/services-websites.svg",
-                  bgDesktop: "/assets/img/services-websites-bg-desktop.svg",
+                  bgDesktop: "/assets/img/services-websites-bg-desktop.png",
                 },
               },
               {
@@ -35,7 +35,7 @@ const About = () => {
                   description: `Aplicações completas em navegadores, sem necessidade de instalação.
                   Podem ser acessadas de qualquer dispositivo com acesso à internet.`,
                   centralImage: "/assets/img/services-webapps.svg",
-                  bgDesktop: "/assets/img/services-webapps-bg-desktop.svg",
+                  bgDesktop: "/assets/img/services-webapps-bg-desktop.png",
                 },
               },
               {
@@ -46,7 +46,7 @@ const About = () => {
                   description: `Aplicações para smartphones Android e iOS
                   Podem ser utilizadas offline.`,
                   centralImage: "/assets/img/services-mobileapps.svg",
-                  bgDesktop: "/assets/img/services-mobileapps-bg-desktop.svg",
+                  bgDesktop: "/assets/img/services-mobileapps-bg-desktop.png",
                 },
               },
               {
@@ -57,14 +57,14 @@ const About = () => {
                   description: `Análise sob medida para o seu negócio.
                   Assessoria especializada em tecnologia da informação`,
                   centralImage: "/assets/img/services-consulting.svg",
-                  bgDesktop: "/assets/img/services-consulting-bg-desktop.svg",
+                  bgDesktop: "/assets/img/services-consulting-bg-desktop.png",
                 },
               },
             ]}
           />
         </section>
 
-        <section className="flex flex-col gap-8">
+        <section className="flexa flex-col gap-8 hidden">
           <h1 className="text-center text-3xl font-semibold">NOSSO TIME</h1>
           <div className="flex items-center gap-4 w-full justify-center">
             <DevInfo
