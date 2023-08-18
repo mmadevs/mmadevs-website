@@ -16,7 +16,6 @@ export default function App() {
         <Welcome />
         <Line />
         <About />
-        <Line />
         <Projects />
         <Line />
         {/* <Contact /> */}
