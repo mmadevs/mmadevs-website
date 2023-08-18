@@ -8,27 +8,28 @@ interface PageLayoutProps {
   id: string;
   className?: string;
   children: ReactNode | ReactNode[];
-  bg: "dark" | "light";
+  bg?: "dark" | "light";
 }
 
 const PageLayout: FunctionComponent<PageLayoutProps> = ({
   id,
   className,
   children,
-  bg,
+  bg = "dark",
 }) => {
-  const { ref, inView } = useInView({
-    initialInView: false,
-    rootMargin: "20px",
+  const { ref, inView, entry } = useInView({
+    // initialInView: false,
+    // rootMargin: "20px",
   });
 
   const { setCurrentRoute } = useNavBar();
 
   useEffect(() => {
-    if (inView) {
+    console.log(id, entry?.intersectionRatio);
+    if (entry?.intersectionRatio ?? 0 > 0.5) {
       setCurrentRoute(`#${id}`);
     }
-  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [inView, entry?.intersectionRatio]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <main
@@ -37,7 +38,7 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
       ${bg === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"}
       ${className ?? ""}`}
     >
-      <div className="flex flex-col flex-1 w-full h-full py-8" ref={ref}>
+      <div className="flex flex-col flex-1 w-full h-full lg:py-2" ref={ref}>
         <div className="flex-1"></div>
         {children}
         <div className="flex-1"></div>

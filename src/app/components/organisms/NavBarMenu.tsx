@@ -17,7 +17,7 @@ export const NavBarMenu: FunctionComponent = () => {
           : "hidden lg:block"
       }
     inset-0 h-screen lg:h-4
-    bg-gray-950 p-8
+    bg-gray-950 p-8 font-bold lg:font-normal
     text-white lg:bg-transparent lg:py-2 
     flex flex-col items-center justify-center
     `}
@@ -38,7 +38,7 @@ export const NavBarMenu: FunctionComponent = () => {
     flex flex-col 
     text-center items-center justify-center 
     w-full h-full
-    lg:flex-row gap-9 lg:gap-4
+    lg:flex-row gap-14 lg:gap-4
     `}
       >
         {navItems.map((item) => (
