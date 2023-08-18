@@ -130,7 +130,13 @@ export const TabsContainer = ({
               {/* px-4 lg:px-16 max-w-6xl */}
               <aside className="flex-1 flex flex-col justify-center lg:gap-2 max-w-full w-full lg:w-auto">
                 <h1
-                  className={`text-3xl whitespace-nowrap lg:text-5xl font-semibold animate-fade-left lg:animate-fade-down animate-delay-75 animate-duration-[2s] ${
+                  className={`${
+                    item.component.title.length > 20
+                      ? "text-lg"
+                      : item.component.title.length > 15
+                      ? "text-xl"
+                      : "text-3xl"
+                  } whitespace-nowrap lg:text-5xl font-semibold animate-fade-left lg:animate-fade-down animate-delay-75 animate-duration-[2s] ${
                     selectedTab === item.route ? "" : "hidden"
                   }`}
                 >
@@ -144,17 +150,24 @@ export const TabsContainer = ({
                   {item.component.description}
                 </p>
                 {item.component.href && (
-                  <Link href={item.component.href}>Visitar...</Link>
+                  <Link
+                    href={item.component.href}
+                    className={`text-blue-400 underline animate-fade-left lg:animate-fade-up animate-delay-500 animate-duration-[2s] ${
+                      selectedTab === item.route ? "" : "hidden"
+                    }`}
+                  >
+                    Visitar...
+                  </Link>
                 )}
               </aside>
-              <aside className="flex-1 flex w-full max-w-full lg:w-auto">
-                <div className="relative aspect-square h-full mx-auto flex">
+              <aside className="flex-1 px-16 lg:px-0 flex w-full max-w-full lg:w-auto">
+                <div className="relative w-full lg:w-auto lg:aspect-square h-full mx-auto flex">
                   <Image
-                    className={`text-lg object-cover overflow-visible animate-fade animate-delay-500 animate-duration-[2s] ${
+                    className={`text-lg object-scale-down overflow-visible animate-fade animate-delay-500 animate-duration-[2s] ${
                       selectedTab === item.route ? "" : "hidden"
                     }`}
                     src={item.component.centralImage}
-                    alt="aaa"
+                    alt="Project logo"
                     fill
                   />
                 </div>

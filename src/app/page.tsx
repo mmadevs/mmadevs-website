@@ -6,6 +6,7 @@ import About from "@/app/components/pages/About";
 import Contact from "@/app/components/pages/Contact";
 import Projects from "@/app/components/pages/Projects";
 import Welcome from "@/app/components/pages/Welcome";
+import { Line } from "./components/atoms/Line";
 
 export default function App() {
   return (
@@ -13,8 +14,11 @@ export default function App() {
       <div className="bg-black relative w-full h-auto min-h-screen overflow-auto">
         <NavBar />
         <Welcome />
+        <Line />
         <About />
-        {/* <Projects /> */}
+        <Line />
+        <Projects />
+        <Line />
         {/* <Contact /> */}
         {/* <Footer /> */}
       </div>

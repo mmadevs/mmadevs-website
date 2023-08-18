@@ -28,7 +28,6 @@ const Welcome = () => {
   return (
     <PageLayout
       id="home"
-      bg="dark"
       className="flex flex-col text-white bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
     >
       <div

@@ -8,14 +8,14 @@ interface PageLayoutProps {
   id: string;
   className?: string;
   children: ReactNode | ReactNode[];
-  bg: "dark" | "light";
+  bg?: "dark" | "light";
 }
 
 const PageLayout: FunctionComponent<PageLayoutProps> = ({
   id,
   className,
   children,
-  bg,
+  bg = "dark",
 }) => {
   const { ref, inView, entry } = useInView({
     // initialInView: false,
