@@ -23,10 +23,10 @@ export const DevInfo = ({
             : `https://linkedin.com/in/${linkedinUser}`
         }
       >
-        <IconBase className="text-sm">
+        <IconBase className="text-xl lg:text-sm">
           {type === "github" ? <FaGithub /> : <FaLinkedin />}
         </IconBase>
-        <small className="text-xs">
+        <small className="text-lg lg:text-xs">
           {type === "github" ? "Github" : "Linkedin"}
         </small>
       </Link>
@@ -34,9 +34,9 @@ export const DevInfo = ({
   };
 
   return (
-    <li className="flex gap-2 items-center min-w-min">
+    <li className="flex gap-2 items-center justify-center min-w-min">
       <div
-        className={`h-12 w-12 flex-grow-0 flex-shrink-0 overflow-hidden 
+        className={`h-16 w-16 lg:h-12 lg:w-12 flex-grow-0 flex-shrink-0 overflow-hidden 
         relative aspect-square`}
       >
         <Image
@@ -47,8 +47,8 @@ export const DevInfo = ({
         />
       </div>
       <div className="flex flex-col">
-        <h2 className="text-lg whitespace-nowrap">{name}</h2>
-        <div className="flex gap-1">
+        <h2 className="text-3xl lg:text-lg whitespace-nowrap">{name}</h2>
+        <div className="flex gap-3 lg:gap-1">
           <SocialLink type={"github"} />
           <SocialLink type={"linkedin"} />
         </div>

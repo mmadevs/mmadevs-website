@@ -123,7 +123,7 @@ export const TabsContainer = ({
               key={item.route}
               id={item.route.replace("#", "")}
               className={`
-                shrink-0 w-full max-w-full h-96 snap-always snap-start flex flex-col lg:flex-row
+                shrink-0 w-full max-w-full h-96 max-h-96 min-h-96 snap-always snap-start flex flex-col lg:flex-row
                 bg-no-repeat bg-cover p-2 lg:p-8 overflow-hidden rounded-md
                 `}
             >
