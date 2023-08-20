@@ -22,7 +22,7 @@ export const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_API_KEY as string
       )
       .then(
-        (res) => {
+        () => {
           toast(
             `Sua mensagem foi enviada pra gente! Entraremos em contato em breve.`,
             { type: "success" }
@@ -30,7 +30,11 @@ export const Contact = () => {
           setIsFormBlocked(true);
         },
         (err) => {
-          console.log("Erro: ", err);
+          console.error("Erro: ", err);
+          toast(
+            "Ocorreu um erro ao enviar sua mensagem, por favor entre em contato conosco através do nosso whatsapp que se encontra no rodapé da página.",
+            { type: "error" }
+          );
         }
       );
   }
