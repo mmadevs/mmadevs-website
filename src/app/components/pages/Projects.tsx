@@ -73,7 +73,7 @@ export const Projects = () => {
   ];
   return (
     <PageLayout className="" id="projects">
-      <div className="py-8 flex flex-col gap-8 max-w-full 2xl:max-w-7xl mx-auto">
+      <div className="py-8 lg:py-2 flex flex-col gap-8 max-w-full 2xl:max-w-7xl mx-auto">
         <section className="flex flex-col gap-8 w-full min-w-0">
           <h1 className="text-center text-3xl font-semibold">PROJETOS</h1>
 
