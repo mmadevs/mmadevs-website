@@ -11,7 +11,10 @@ import { Line } from "./components/atoms/Line";
 export default function App() {
   return (
     <NavBarProvider>
-      <div className="bg-black relative w-full h-auto min-h-screen overflow-auto">
+      <div
+        className="bg-black relative w-full max-w-full h-auto min-h-screen 
+      overflow-x-hidden overflow-y-auto"
+      >
         <NavBar />
         <Welcome />
         <Line />

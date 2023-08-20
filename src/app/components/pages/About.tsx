@@ -109,7 +109,6 @@ const About = () => {
             />
           </div>
         </section>
-        <Line />
         <section className="flex flex-col gap-8 lg:max-w-5xl mx-auto">
           <p className="text-md lg:text-lg 2xl:text-xl text-center w-full">
             Através da conservação e prática desses pilares conseguimos
