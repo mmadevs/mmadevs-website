@@ -1,19 +1,12 @@
 "use client";
 import Image from "next/image";
-
-import "swiper/css";
-import "swiper/css/bundle";
 import PageLayout from "../templates/PageLayout";
-import { useInView } from "react-intersection-observer";
-
 import { BsFacebook, BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { MdStar } from "react-icons/md";
 import Link from "next/link";
 import { IconBase } from "react-icons/lib";
 
 const Welcome = () => {
-  const { ref, inView } = useInView();
-
   const footerIcons = [
     { icon: <BsFacebook />, href: "https://www.facebook.com/mmadevs" },
     {
