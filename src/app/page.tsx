@@ -18,7 +18,7 @@ export default function App() {
         <About />
         <Projects />
         <Line />
-        {/* <Contact /> */}
+        <Contact />
         {/* <Footer /> */}
       </div>
     </NavBarProvider>
