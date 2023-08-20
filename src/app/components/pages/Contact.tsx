@@ -2,92 +2,17 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import PageLayout from "../templates/PageLayout";
-import { IFormInput } from "@/app/types/formInput";
 import { z, ZodError } from "zod";
+import { toast } from "react-toastify";
 
 export const Contact = () => {
-  const [name, setName] = useState("");
-  const [bsName, setBsName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [isFormBlocked, setIsFormBlocked] = useState(false);
 
-  const [data, setData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const changeData = (key: string, value: string) => {
-    setData((prev) => ({ ...prev, [key]: value }));
-  };
-
-  const inputs: Array<IFormInput> = [
-    {
-      name: "name",
-      label: "Seu nome",
-      maxLength: 40,
-      type: "text",
-      value: data.name,
-      setValue: (e) => changeData("name", e),
-    },
-    {
-      name: "company",
-      label: "Empresa",
-      maxLength: 40,
-      type: "text",
-      value: data.company,
-      setValue: (e) => changeData("company", e),
-    },
-    {
-      name: "email",
-      label: "Seu email",
-      maxLength: 40,
-      type: "email",
-      value: data.email,
-      setValue: (e) => changeData("email", e),
-    },
-    {
-      name: "phone",
-      label: "Seu contato",
-      maxLength: 14,
-      type: "tel",
-      value: data.phone,
-      setValue: (e) => changeData("phone", e),
-    },
-    {
-      name: "message",
-      label: "Conta um pouco sobre o que você precisa",
-      maxLength: 200,
-      type: "text",
-      value: data.message,
-      setValue: (e) => changeData("message", e),
-    },
-  ];
-
-  function sendEmail(e: any) {
-    e.preventDefault();
-
-    if (
-      name === "" ||
-      bsName === "" ||
-      email === "" ||
-      phone === "" ||
-      message === ""
-    ) {
-      alert("Preencha todos os campos do formulário");
-      return;
-    }
-
-    const templateParamns = {
-      from_name: name,
-      bsName: bsName,
-      mail: email,
-      phone: phone,
-      message: message,
-    };
+  function sendEmail() {
+    const templateParamns = fields.reduce(
+      (obj, item) => Object.assign(obj, { [item.name]: item.value }),
+      {}
+    );
 
     emailjs
       .send(
@@ -98,13 +23,11 @@ export const Contact = () => {
       )
       .then(
         (res) => {
-          // console.log("E-mail enviado!", res.status, res.text);
-          alert("Solicitação de contato enviada!");
-          setName("");
-          setBsName("");
-          setEmail("");
-          setPhone("");
-          setMessage("");
+          toast(
+            `Sua mensagem foi enviada pra gente! Entraremos em contato em breve.`,
+            { type: "success" }
+          );
+          setIsFormBlocked(true);
         },
         (err) => {
           console.log("Erro: ", err);
@@ -118,6 +41,7 @@ export const Contact = () => {
       type: "text" | "email" | "tel";
       label: string;
       span: boolean;
+      maxLength: number;
       value: string;
       getError: (value: string) => string | undefined | null;
       long?: boolean;
@@ -129,6 +53,7 @@ export const Contact = () => {
       type: "text",
       label: "Seu nome:",
       span: true,
+      maxLength: 50,
       value: "",
       getError: (value: string) => {
         try {
@@ -147,10 +72,11 @@ export const Contact = () => {
       },
     },
     {
-      name: "mail",
+      name: "email",
       type: "email",
       label: "Email:",
       span: false,
+      maxLength: 50,
       value: "",
       getError: (value: string) => {
         try {
@@ -173,6 +99,7 @@ export const Contact = () => {
       type: "tel",
       label: "Telefone/Celular:",
       span: false,
+      maxLength: 30,
       value: "",
       getError: (value: string) => {
         try {
@@ -196,6 +123,7 @@ export const Contact = () => {
       type: "text",
       label: "Do que você precisa?",
       span: true,
+      maxLength: 300,
       value: "",
       getError: (value: string) => {
         try {
@@ -224,11 +152,13 @@ export const Contact = () => {
         <form
           id="contact-form"
           name="contact-form"
-          className="flex flex-col gap-2 lg:grid grid-cols-2"
+          className={`flex flex-col gap-2 lg:grid grid-cols-2 ${
+            isFormBlocked ? "pointer-events-none select-none opacity-50" : ""
+          }`}
           onSubmit={(e) => {
             e.preventDefault();
             if (fields.every((x) => x.value && !x.error)) {
-              console.log(e);
+              sendEmail();
             } else {
               console.error("Preencha o formulário corretamente!");
             }
@@ -239,6 +169,7 @@ export const Contact = () => {
               className: `text-black rounded-md p-2 text-lg resize-none`,
               id: `${x.name}-input`,
               name: `${x.name}-input`,
+              maxLength: x.maxLength,
               value: x.value,
               type: x.type,
               rows: x.long ? 3 : 1,
@@ -286,6 +217,7 @@ export const Contact = () => {
             className="bg-blue-500 text-lg py-3 px-8 col-span-2
             rounded-xl hover:bg-transparent hover:text-blue-400 
           transition-all border-blue-500 border-4"
+            disabled={isFormBlocked}
           >
             Enviar
           </button>
