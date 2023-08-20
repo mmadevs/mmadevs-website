@@ -151,8 +151,9 @@ export const TabsContainer = ({
                 </p>
                 {item.component.href && (
                   <Link
+                    target={"_blank"}
                     href={item.component.href}
-                    className={`text-blue-400 underline animate-fade-left lg:animate-fade-up animate-delay-500 animate-duration-[2s] ${
+                    className={`pointer-events-auto text-blue-400 underline animate-fade-left lg:animate-fade-up animate-delay-500 animate-duration-[2s] ${
                       selectedTab === item.route ? "" : "hidden"
                     }`}
                   >

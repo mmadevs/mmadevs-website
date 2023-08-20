@@ -25,7 +25,6 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   const { setCurrentRoute } = useNavBar();
 
   useEffect(() => {
-    console.log(id, entry?.intersectionRatio);
     if (entry?.intersectionRatio ?? 0 > 0.5) {
       setCurrentRoute(`#${id}`);
     }
