@@ -24,11 +24,11 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
 
   const { setCurrentRoute } = useNavBar();
 
-  useEffect(() => {
-    if (entry?.intersectionRatio ?? 0 > 0.5) {
-      setCurrentRoute(`#${id}`);
-    }
-  }, [inView, entry?.intersectionRatio]); // eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   if (entry?.intersectionRatio ?? 0 > 0.5) {
+  //     setCurrentRoute(`#${id}`);
+  //   }
+  // }, [inView, entry?.intersectionRatio]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <main

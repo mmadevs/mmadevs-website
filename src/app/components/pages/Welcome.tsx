@@ -24,7 +24,8 @@ const Welcome = () => {
       className="flex flex-col text-white bg-[url('/assets/img/bg.png')] bg-no-repeat bg-cover"
     >
       <div
-        className="flex-1 lg:grid grid-cols-2 grid-rows-4 gap-y-4 max-w-7xl mx-auto
+        id="home-child"
+        className="page flex-1 lg:grid grid-cols-2 grid-rows-4 gap-y-4 max-w-7xl mx-auto
       flex flex-col text-center lg:text-left lg:pt-8"
       >
         <aside

@@ -77,7 +77,10 @@ const About = () => {
 
   return (
     <PageLayout id="about">
-      <div className="py-8 lg:py-2 flex flex-col gap-8 max-w-full 2xl:max-w-7xl mx-auto">
+      <div
+        id="about-child"
+        className="page pt-8 lg:py-2 flex flex-col gap-8 max-w-full 2xl:max-w-7xl mx-auto"
+      >
         <section className="flex flex-col gap-8 w-full min-w-0">
           <h1 className="text-center text-3xl font-semibold">SERVIÇOS</h1>
 

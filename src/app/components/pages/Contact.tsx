@@ -151,8 +151,11 @@ export const Contact = () => {
   ]);
 
   return (
-    <PageLayout id="contact-us">
-      <div className="py-8 flex flex-col gap-4 max-w-full lg:max-w-4xl mx-auto w-full">
+    <PageLayout id="contact">
+      <div
+        id="contact-child"
+        className="page pt-4 flex flex-col gap-4 max-w-full lg:max-w-4xl mx-auto w-full"
+      >
         <h1 className="text-center text-3xl font-semibold">FALE CONOSCO </h1>
 
         <form
