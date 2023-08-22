@@ -1,8 +1,6 @@
 "use client";
 
-import { FunctionComponent, ReactNode, useEffect, useCallback } from "react";
-import { useInView } from "react-intersection-observer";
-import { useNavBar } from "@/app/context/navbarContext";
+import { FunctionComponent, ReactNode } from "react";
 
 interface PageLayoutProps {
   id: string;
@@ -17,19 +15,6 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
   children,
   bg = "dark",
 }) => {
-  const { ref, inView, entry } = useInView({
-    // initialInView: false,
-    // rootMargin: "20px",
-  });
-
-  const { setCurrentRoute } = useNavBar();
-
-  useEffect(() => {
-    if (entry?.intersectionRatio ?? 0 > 0.5) {
-      setCurrentRoute(`#${id}`);
-    }
-  }, [inView, entry?.intersectionRatio]); // eslint-disable-line react-hooks/exhaustive-deps
-
   return (
     <main
       id={id}
@@ -37,7 +22,7 @@ const PageLayout: FunctionComponent<PageLayoutProps> = ({
       ${bg === "dark" ? "bg-gray-950 text-white" : "bg-white text-black"}
       ${className ?? ""}`}
     >
-      <div className="flex flex-col flex-1 w-full h-full lg:py-2" ref={ref}>
+      <div className="flex flex-col flex-1 w-full h-full lg:py-2">
         <div className="flex-1"></div>
         {children}
         <div className="flex-1"></div>
